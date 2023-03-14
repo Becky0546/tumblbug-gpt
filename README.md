@@ -3,6 +3,7 @@
 이 결과물은 Node.js 기반 chatGPT api 라이브러리인 [chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api)를 이용하여 만들었습니다. 도움이 되시기를 바랍니다! 🥺🥺
 
 ## example
+https://user-images.githubusercontent.com/126536568/224942878-6e064e5d-9741-466b-9898-1a6bc345d1aa.mov
 
 ## execute
 

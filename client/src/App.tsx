@@ -57,23 +57,27 @@ function App() {
 
   return (
     <div className="flex flex-col items-center h-screen bg-gray-100 font-sans">
-      <div className="m-5 font-sofia-sans font-bold text-18 leading-22 tracking-tighter text-violet-600">
+      <div className="block shadow-md text-left flex items-center justify-left p-5 w-[380px] h-[52px] bg-[#F1F0FA] rounded-t-2xl absolute mt-10 z-50 m-5 font-sofia-sans font-bold text-18 leading-22 tracking-tighter text-[#C1BBE5]">
         STEADIO GPT
       </div>
-      <div className="w-500 h-82 mb-10">
+      <div className="pt-[70px] w-[380px] h-[630px] mt-10 bg-white shadow-2xl drop-shadow-2xl rounded-2xl overflow-y-scroll scrollbar-hide relative z-0">
+        <ul className="w-96">
+          {message.length !== 0 &&
+            message.map((item, idx) => (
+              <ChatWindow messages={item} key={idx} />
+            ))}
+          {loading && <BeatLoader color="#5D49D5" size={10} className="mt-5" />}
+        </ul>
+      </div>
+      <div>
         <input
           type={"text"}
           value={inputValue}
-          className="font-medium w-96 h-100 box-border bg-white border-0.5 border-gray-300 shadow-md rounded-lg px-3 py-3"
+          className="bg-[#F1F0FA] rounded-2xl p-5 z-50 w-[360px] h-[50px] absolute top-[610px] left-[540px] border-[1px] border-[#E2DFE3]"
           onKeyDown={(e) => sendQuestion(e)}
           onChange={(event) => setInputValue(event.target.value)}
         />
       </div>
-      <ul className="w-96 h-4/5 overflow-auto">
-        {message.length !== 0 &&
-          message.map((item, idx) => <ChatWindow messages={item} key={idx} />)}
-        {loading && <BeatLoader color="#5D49D5" size={10} className="mt-5" />}
-      </ul>
     </div>
   );
 }
